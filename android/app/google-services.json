@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "250726143244",
+    "project_id": "booking-f1036",
+    "storage_bucket": "booking-f1036.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250726143244:android:57a76aaec90471e8622529",
+        "android_client_info": {
+          "package_name": "com.example.roome"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmMUlbV-kitX2YlLlfX8j24WN6TgeKJ6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
