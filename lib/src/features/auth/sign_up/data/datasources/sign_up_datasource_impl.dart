@@ -21,6 +21,9 @@ class SignUpDataSourceImpl implements SignUpDataSource {
   }) async {
     final response = await apiConsumer.post(
       EndPoints.register,
+      headers: {
+        'Content-type' : 'x-www-form-urlencoded'
+      },
       body: {
         'firstName': firstName,
         'lastName': lastName,
@@ -41,7 +44,7 @@ class SignUpDataSourceImpl implements SignUpDataSource {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
     final GoogleSignInAuthentication? googleAuth =
-        await googleUser?.authentication;
+    await googleUser?.authentication;
 
     final credential = GoogleAuthProvider.credential(
       accessToken: googleAuth?.accessToken,

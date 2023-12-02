@@ -27,6 +27,9 @@ class FavoriteDataSourceImpl implements FavoriteDataSource {
   }) async {
     final response = await apiConsumer.post(
       '${EndPoints.user}/add-to-fav/$uId/hotel/$hotelId',
+      headers: {
+        'Content-type' : 'x-www-form-urlencoded'
+      },
       queryParameters: {
         'userId': uId,
         'hotelId': hotelId,
@@ -43,6 +46,9 @@ class FavoriteDataSourceImpl implements FavoriteDataSource {
   }) async {
     final response = await apiConsumer.post(
       '${EndPoints.user}/remove-from-fav/$uId/hotel/$hotelId',
+      headers: {
+        'Content-type' : 'x-www-form-urlencoded'
+      },
       queryParameters: {
         'userId': uId,
         'hotelId': hotelId,

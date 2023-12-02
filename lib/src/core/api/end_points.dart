@@ -1,7 +1,7 @@
 class EndPoints {
-  static const String baseUrl = 'https://roome-cyka.onrender.com/api/';
+  static const String baseUrl = 'https://mnsh-tech.preview-domain.com/wp-json/';
   static const String user = '${baseUrl}user';
-  static const String login = '${baseUrl}auth/login';
+  static const String login = '${baseUrl}jwt-auth/v1/token';
   static const String register = '${baseUrl}auth/register';
   static const String role = '${baseUrl}role';
   static const String hotel = '${baseUrl}hotel';

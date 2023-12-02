@@ -15,7 +15,7 @@ class LoginDataSourceImpl implements LoginDataSource {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
     final GoogleSignInAuthentication? googleAuth =
-        await googleUser?.authentication;
+    await googleUser?.authentication;
 
     final credential = GoogleAuthProvider.credential(
       accessToken: googleAuth?.accessToken,
@@ -32,6 +32,9 @@ class LoginDataSourceImpl implements LoginDataSource {
   }) async {
     final response = await apiConsumer.post(
       EndPoints.login,
+      headers: {
+        'Content-type' : 'x-www-form-urlencoded'
+      },
       body: {
         'username': usernameOrEmail,
         'password': password,
