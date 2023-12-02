@@ -39,9 +39,9 @@ class DioConsumer implements ApiConsumer {
 
   @override
   Future<dynamic> get(
-    String path, {
-    Map<String, dynamic>? queryParameters,
-  }) async {
+      String path, {
+        Map<String, dynamic>? queryParameters,
+      }) async {
     final response = await client.get(
       path,
       queryParameters: queryParameters,
@@ -52,11 +52,12 @@ class DioConsumer implements ApiConsumer {
 
   @override
   Future<dynamic> post(
-    String path, {
-    Map<String, dynamic>? queryParameters,
-    bool formDataIsEnabled = false,
-    Map<String, dynamic>? body,
-  }) async {
+      String path, {
+        Map<String, dynamic>? queryParameters,
+        bool formDataIsEnabled = false,
+        Map<String, String>? headers,
+        Map<String, dynamic>? body,
+      }) async {
     final response = await client.post(
       path,
       queryParameters: queryParameters,
@@ -68,10 +69,10 @@ class DioConsumer implements ApiConsumer {
 
   @override
   Future<dynamic> put(
-    String path, {
-    Map<String, dynamic>? queryParameters,
-    Map<String, dynamic>? body,
-  }) async {
+      String path, {
+        Map<String, dynamic>? queryParameters,
+        Map<String, dynamic>? body,
+      }) async {
     final response = await client.put(
       path,
       queryParameters: queryParameters,
