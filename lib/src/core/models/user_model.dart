@@ -42,9 +42,9 @@ class UserModel extends Equatable {
         firstName: json["firstName"] as String?,
         middleName: json["middleName"] as String?,
         lastName: json["lastName"] as String?,
-        username: json["username"] as String?,
-        email: json["email"] as String?,
-        password: json["password"] as String?,
+        username: json["user_login"] as String?,
+        email: json["user_email"] as String?,
+        password: json["user_pass"] as String?,
         role: json['role'] == null
             ? null
             : Role.fromJson(json["role"] as Map<String, dynamic>),

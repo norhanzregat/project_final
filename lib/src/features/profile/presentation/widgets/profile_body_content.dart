@@ -123,7 +123,7 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
                       position: _leftSlideAnimation,
                       child: Center(
                         child: CachedNetworkImage(
-                          imageUrl: Helper.currentUser!.profileImage!,
+                          imageUrl: Helper.currentUser!.profileImage ?? 'http://mnsh.tech/wp-content/uploads/2023/12/no-facial-features-no-avatar-no-eyes-expressionless-avatar-icon-delayering-avatar-user-avatar-men-head-portrait.png',
                           imageBuilder: (_, image) {
                             return CircleAvatar(
                               radius: 70.r,
@@ -166,14 +166,6 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
                               title: 'username',
                               info: '${Helper.currentUser!.username}',
                             ),
-                            UserInfo(
-                              title: 'Occupation',
-                              info: Helper.currentUser!.occupation,
-                            ),
-                            UserInfo(
-                              title: 'Nationality',
-                              info: Helper.currentUser!.nationality,
-                            ),
                           ],
                         ),
                       ),
@@ -197,12 +189,8 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             UserInfo(
-                              title: 'Phone number :',
-                              info: Helper.currentUser!.phoneNumber,
-                            ),
-                            UserInfo(
                               title: 'Email :',
-                              info: Helper.currentUser!.email,
+                              info: Helper.currentUser!.email ?? '',
                             ),
                           ],
                         ),

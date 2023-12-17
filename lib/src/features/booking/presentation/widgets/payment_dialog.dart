@@ -88,7 +88,7 @@ class PaymentDialog extends StatelessWidget {
                 ),
                 SizedBox(height: SizeConfig.screenHeight! * 0.014),
                 Text(
-                  'Hi ${Helper.currentUser!.firstName}, Your booking was successful',
+                  'Hi ${Helper.currentUser!.username}, Your booking was successful',
                   style: AppTextStyles.textStyle15.copyWith(
                     color: state.brightness == Brightness.light
                         ? AppColors.lightGrey.withOpacity(0.62)

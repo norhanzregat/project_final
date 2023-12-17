@@ -31,9 +31,8 @@ class LoginCubit extends Cubit<LoginState> {
       password: password,
     )).then((value) {
       value.fold(
-        (failure) =>
-            emit(SignInErrorState(error: failure.errorMessage.toString())),
-        (user) {
+            (failure) => emit(SignInErrorState(error: failure.errorMessage?.toString() ?? 'Unknown error')),
+            (user) {
           emit(SignInSuccessState(
             uId: user.id!,
             userModel: user,
@@ -48,10 +47,10 @@ class LoginCubit extends Cubit<LoginState> {
 
     loginWithGoogleUseCase(const NoParams()).then((value) {
       value.fold(
-        (failure) => emit(
-          SignInWithGoogleErrorState(error: failure.errorMessage.toString()),
+            (failure) => emit(
+          SignInWithGoogleErrorState(error: failure.errorMessage?.toString() ?? 'Unknown error'),
         ),
-        (user) => emit(SignInWithGoogleSuccessState(uId: user.user!.uid)),
+            (user) => emit(SignInWithGoogleSuccessState(uId: user.user?.uid ?? '')),
       );
     });
   }

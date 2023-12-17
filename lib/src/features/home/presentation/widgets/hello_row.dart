@@ -32,7 +32,7 @@ class HelloRow extends StatelessWidget {
           const Text(AppStrings.waveEmoji),
           SizedBox(width: SizeConfig.screenWidth! * 0.016),
           Text(
-            'Hello, ${Helper.currentUser!.firstName}',
+            'Hello, ${Helper.currentUser!.username}',
             style: AppTextStyles.textStyle15.copyWith(
               fontWeight: FontWeight.w600,
             ),

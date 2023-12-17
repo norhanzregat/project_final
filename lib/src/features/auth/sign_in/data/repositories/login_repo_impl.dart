@@ -44,7 +44,7 @@ class LoginRepoImpl extends LoginRepo {
       if (!response.containsKey('message')) {
         return Left(ServerFailure(errorMessage: response['message']));
       } else {
-        final UserModel user = UserModel.fromJson(response);
+        final UserModel user = UserModel.fromJson(response['data']);
 
         return Right(user);
       }
