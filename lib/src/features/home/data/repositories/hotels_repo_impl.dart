@@ -23,7 +23,7 @@ class HotelsRepoImpl extends HotelsRepo {
 
         List<Hotel> hotels = <Hotel>[];
 
-        for (var hotel in response['data']) {
+        for (var hotel in response['hotels']) {
           hotels.add(Hotel.fromJson(hotel));
         }
 

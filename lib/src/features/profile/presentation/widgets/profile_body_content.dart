@@ -166,6 +166,14 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
                               title: 'username',
                               info: '${Helper.currentUser!.username}',
                             ),
+                            UserInfo(
+                              title: 'Occupation',
+                              info: Helper.currentUser!.occupation,
+                            ),
+                            UserInfo(
+                              title: 'Nationality',
+                              info: Helper.currentUser!.nationality,
+                            ),
                           ],
                         ),
                       ),
@@ -188,6 +196,10 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
+                            UserInfo(
+                              title: 'Phone number :',
+                              info: Helper.currentUser!.phoneNumber,
+                            ),
                             UserInfo(
                               title: 'Email :',
                               info: Helper.currentUser!.email ?? '',

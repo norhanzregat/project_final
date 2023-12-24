@@ -31,7 +31,7 @@ class LoginDataSourceImpl implements LoginDataSource {
     required String password,
   }) async {
     final response = await apiConsumer.post(
-      EndPoints.auth,
+      EndPoints.login,
       headers: {
         'Content-type' : 'x-www-form-urlencoded'
       },
