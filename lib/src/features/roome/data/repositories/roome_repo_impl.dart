@@ -55,10 +55,10 @@ class RoomeRepoImpl extends RoomeRepo {
     if (await networkInfo.isConnected) {
       final response = await roomeDataSource.getUserData(userId: userId);
 
-      if (!response.containsKey('message')) {
+      if (response.containsKey('message')) {
         return Left(ServerFailure(errorMessage: response['message']));
       } else {
-        final UserModel user = UserModel.fromJson(response['data']);
+        final UserModel user = UserModel.fromJson(response['user']);
 
         return Right(user);
       }
@@ -81,7 +81,7 @@ class RoomeRepoImpl extends RoomeRepo {
       if (response.containsKey('message')) {
         return Left(ServerFailure(errorMessage: response['message']));
       } else {
-        final UserModel user = UserModel.fromJson(response);
+        final UserModel user = UserModel.fromJson(response['user']);
 
         return Right(user);
       }

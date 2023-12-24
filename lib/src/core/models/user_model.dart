@@ -47,7 +47,7 @@ class UserModel extends Equatable {
         password: json["user_pass"] as String?,
         role: json['role'] == null
             ? null
-            : Role.fromJson(json["role"] as Map<String, dynamic>),
+            : null,
         profileImage: json["profileImage"] as String?,
         reservations: json['reservations'] == null
             ? null

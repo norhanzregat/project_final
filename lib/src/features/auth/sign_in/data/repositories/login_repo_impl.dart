@@ -41,10 +41,10 @@ class LoginRepoImpl extends LoginRepo {
         password: password,
       );
 
-      if (!response.containsKey('message')) {
+      if (response.containsKey('message')) {
         return Left(ServerFailure(errorMessage: response['message']));
       } else {
-        final UserModel user = UserModel.fromJson(response['data']);
+        final UserModel user = UserModel.fromJson(response['user']);
 
         return Right(user);
       }
