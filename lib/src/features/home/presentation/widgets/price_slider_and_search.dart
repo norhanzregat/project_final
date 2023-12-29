@@ -17,7 +17,7 @@ class PriceSliderAndSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 153.h,
+      height: 120.h,
       width: 384.w,
       padding: EdgeInsets.only(top: 11.h, left: 13.w),
       margin: EdgeInsets.only(right: 26.w),
@@ -33,11 +33,12 @@ class PriceSliderAndSearch extends StatelessWidget {
           Text(
             'Price Range Per Night',
             style: AppTextStyles.textStyle14Medium.copyWith(
-              fontSize: 13.sp,
+              fontSize: 15.sp,
+              fontWeight: FontWeight.bold
             ),
           ),
-          SizedBox(height: SizeConfig.screenHeight! * 0.05),
-          const PriceSlider(),
+         SizedBox(height: SizeConfig.screenHeight! * 0.02),
+         // const PriceSlider(),
           SizedBox(height: SizeConfig.screenHeight! * 0.005),
           BlocBuilder<ThemesCubit, ThemeData>(
             builder: (context, state) {
