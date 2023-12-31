@@ -27,7 +27,7 @@ class RecommendedRepoImpl extends RecommendedRepo {
 
         List<Hotel> recommendedHotels = <Hotel>[];
 
-        for (var recommendedHotel in response) {
+        for (var recommendedHotel in response['recommendedHotels']) {
           recommendedHotels.add(Hotel.fromJson(recommendedHotel));
         }
 

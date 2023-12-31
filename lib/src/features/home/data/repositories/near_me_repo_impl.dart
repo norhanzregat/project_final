@@ -25,7 +25,7 @@ class NearMeRepoImpl extends NearMeRepo {
 
         List<Hotel> nearMeHotels = <Hotel>[];
 
-        for (var nearMeHotel in response) {
+        for (var nearMeHotel in response['nearHotels']) {
           nearMeHotels.add(Hotel.fromJson(nearMeHotel));
         }
 
