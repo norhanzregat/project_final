@@ -17,6 +17,7 @@ class Recommended extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<RecommendedCubit, RecommendedState>(
       builder: (context, state) {
+        print('Current State: $state');
         if (state is GetRecommendedHotelsLoadingState) {
           return const ShimmerRecommended();
         } else if (state is GetRecommendedHotelsSuccessState) {

@@ -27,7 +27,7 @@ class FavoriteRepoImpl extends FavoriteRepo {
         final response = await favoriteDataSource.getFavorites(userId: userId);
         List<Hotel> favorites = <Hotel>[];
 
-        for (var fav in response) {
+        for (var fav in response['favoriteHotels']) {
           favorites.add(Hotel.fromJson(fav));
         }
 

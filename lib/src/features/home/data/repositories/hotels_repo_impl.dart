@@ -22,7 +22,7 @@ class HotelsRepoImpl extends HotelsRepo {
         final response = await hotelsDataSource.getHotels();
 
         List<Hotel> hotels = <Hotel>[];
-        print(response);
+
         for (var hotel in response['hotels']) {
           hotels.add(Hotel.fromJson(hotel));
         }

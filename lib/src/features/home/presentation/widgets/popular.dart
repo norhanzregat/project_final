@@ -15,6 +15,7 @@ class Popular extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HotelsCubit, HotelsState>(builder: (context, state) {
+      print('Current State: $state');
       if (state is GetHotelsLoadingState) {
         return const ShimmerPopular();
       } else if (state is GetHotelsSuccessState) {

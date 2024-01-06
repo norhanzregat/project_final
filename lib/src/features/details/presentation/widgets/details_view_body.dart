@@ -22,16 +22,17 @@ import 'details_section_title.dart';
 
 class DetailsViewBody extends StatelessWidget {
   const DetailsViewBody({
-    super.key,
+    Key? key,
     required this.hotel,
     required this.usingHero,
-  });
+  }) : super(key: key);
 
   final Hotel hotel;
   final bool usingHero;
 
   @override
   Widget build(BuildContext context) {
+    print(hotel);
     return BlocBuilder<ThemesCubit, ThemeData>(
       builder: (context, state) {
         return SingleChildScrollView(
@@ -41,9 +42,7 @@ class DetailsViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                usingHero
-                    ? DetailsImageWithHero(hotel: hotel)
-                    : DetailsImage(hotel: hotel),
+                    DetailsImage(hotel: hotel),
                 SizedBox(height: SizeConfig.screenHeight! * 0.031),
                 Padding(
                   padding: EdgeInsets.only(left: 9.w),
@@ -53,42 +52,47 @@ class DetailsViewBody extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          hotel.name!,
-                          style: AppTextStyles.appBarTextStyle.copyWith(
-                            fontWeight: FontWeight.w500,
-                            color: state.brightness == Brightness.light
-                                ? Colors.black
-                                : Colors.white,
+                        if (hotel.name != null)
+                          Text(
+                            hotel.name!,
+                            style: AppTextStyles.appBarTextStyle.copyWith(
+                              fontWeight: FontWeight.w500,
+                              color: state.brightness == Brightness.light
+                                  ? Colors.black
+                                  : Colors.white,
+                            ),
                           ),
-                        ),
                         SizedBox(height: SizeConfig.screenHeight! * 0.014),
-                        LocationText(location: hotel.location!),
+                        if (hotel.location != null)
+                          LocationText(location: hotel.location!),
                         SizedBox(height: SizeConfig.screenHeight! * 0.014),
                         const DetailsSectionTitle(title: 'Description'),
                         SizedBox(height: SizeConfig.screenHeight! * 0.014),
-                        Text(
-                          hotel.description!,
-                          style: AppTextStyles.textStyle14Medium.copyWith(
-                            fontSize: 13.sp,
-                            color: state.brightness == Brightness.light
-                                ? AppColors.lightGrey.withOpacity(0.49)
-                                : AppColors.white38,
+                        if (hotel.description != null)
+                          Text(
+                            hotel.description!,
+                            style: AppTextStyles.textStyle14Medium.copyWith(
+                              fontSize: 13.sp,
+                              color: state.brightness == Brightness.light
+                                  ? AppColors.lightGrey.withOpacity(0.49)
+                                  : AppColors.white38,
+                            ),
                           ),
-                        ),
                         SizedBox(height: SizeConfig.screenHeight! * 0.02),
                         const DetailsSectionTitle(title: 'Facilities'),
                         SizedBox(height: SizeConfig.screenHeight! * 0.02),
-                        Facilities(facilities: hotel.facilities!),
+                        if (hotel.facilities != null)
+                          Facilities(facilities: hotel.facilities!),
                         SizedBox(height: SizeConfig.screenHeight! * 0.053),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            PricePerNightText(
-                              price: hotel.price,
-                              fontSize: 20.sp,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                            ),
+                            if (hotel.price != null)
+                              PricePerNightText(
+                                price: hotel.price,
+                                fontSize: 20.sp,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                              ),
                             GlowingCustomButton(
                               onPressed: () => context.navigateTo(
                                 routeName: Routes.bookingOneViewRoute,
