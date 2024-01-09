@@ -52,7 +52,7 @@ class TicketViewBody extends StatelessWidget {
                   BoxShadow(
                     offset: Offset(0, 4.w),
                     blurRadius: 4.w,
-                    color: AppColors.primaryColor.withOpacity(0.15),
+                    color: AppColors.primaryColor,
                   ),
                 ],
               ),

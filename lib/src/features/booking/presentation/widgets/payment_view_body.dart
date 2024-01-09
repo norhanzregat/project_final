@@ -54,24 +54,25 @@ class PaymentViewBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       const SectionTitle(title: 'My Card'),
-                      CustomTextButton(
-                        onTap: () {},
-                        child: Text(
-                          'Edit Card',
-                          style: AppTextStyles.hintStyle.copyWith(
-                            color: AppColors.primaryColor,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ),
+                      // CustomTextButton(
+                      //   onTap: () {},
+                      //   child: Text(
+                      //     'Edit Card',
+                      //     style: AppTextStyles.hintStyle.copyWith(
+                      //       color: AppColors.primaryColor,
+                      //       fontWeight: FontWeight.normal,
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                   SizedBox(height: SizeConfig.screenHeight! * 0.018),
                   ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(20.r)),
-                    child: SvgPicture.asset(
+                    borderRadius: BorderRadius.all(Radius.circular(30.r)),
+                    child: Image.asset(
                       AppAssets.imageCreditCard,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
+                      width: 300,
                     ),
                   ),
                   SizedBox(height: SizeConfig.screenHeight! * 0.04),

@@ -7,7 +7,6 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 import '/src/config/themes/cubit/themes_cubit.dart';
 import '/src/features/home/presentation/widgets/disabled_search_field.dart';
-import 'price_slider.dart';
 
 class PriceSliderAndSearch extends StatelessWidget {
   const PriceSliderAndSearch({
@@ -17,8 +16,8 @@ class PriceSliderAndSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120.h,
-      width: 384.w,
+      height: 100.h,
+      width: 300.w,
       padding: EdgeInsets.only(top: 11.h, left: 13.w),
       margin: EdgeInsets.only(right: 26.w),
       decoration: BoxDecoration(
@@ -31,7 +30,7 @@ class PriceSliderAndSearch extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Price Range Per Night',
+            'Search Hotels',
             style: AppTextStyles.textStyle14Medium.copyWith(
               fontSize: 15.sp,
               fontWeight: FontWeight.bold

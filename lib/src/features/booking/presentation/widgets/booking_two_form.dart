@@ -168,27 +168,12 @@ class _BookingTwoFormState extends State<BookingTwoForm> {
             from: AppConstants.fadeInHorizontalValue,
             child: Align(
               alignment: Alignment.center,
-              child: Text(
-                'Or',
-                style: AppTextStyles.textStyle14Medium.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black.withOpacity(0.5),
-                ),
-              ),
+
             ),
           ),
           SizedBox(height: SizeConfig.screenHeight! * 0.008),
-          _buildFadeInSectionTitle(title: 'Input your NIN Code'),
           SizedBox(height: SizeConfig.screenHeight! * 0.014),
-          BookingTwoTextField(
-            controller: _ninCodeNameController,
-            textCapitalization: TextCapitalization.none,
-            keyboardType: TextInputType.number,
-            width: SizeConfig.screenWidth,
-            validating: (String? val) {
-              return _validateBlankFields(val);
-            },
-          ),
+
           SizedBox(height: SizeConfig.screenHeight! * 0.035),
           FadeInUp(
             from: AppConstants.fadeInUpValue,

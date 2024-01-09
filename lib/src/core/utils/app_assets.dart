@@ -23,7 +23,7 @@ class AppAssets {
   static const String imageAddImage = "assets/image/addimage.png";
   static const String imageBlueCircles = "assets/image/blueCircles.svg";
   static const String imageCamera = "assets/image/take2.pngassets/image/download.png";
-  static const String imageCreditCard = "assets/image/creditCard.svg";
+  static const String imageCreditCard = "assets/image/bank.png";
   static const String imageGreenCircles = "assets/image/greenCircles.svg";
   static const String imageGreyCircles = "assets/image/greyCircles.svg";
   static const String imageLightBlueCircles =

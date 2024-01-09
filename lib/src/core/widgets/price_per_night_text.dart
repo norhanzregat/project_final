@@ -26,7 +26,7 @@ class PricePerNightText extends StatelessWidget {
           mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.end,
           children: <Widget>[
             Text(
-              price!.toStringAsFixed(1), // السعر من منزله عشريه واحده
+              price!.toStringAsFixed(1),
               style: AppTextStyles.bottomNavTextStyle.copyWith(
                 fontSize: fontSize,
                 fontWeight: FontWeight.w900,
@@ -41,7 +41,7 @@ class PricePerNightText extends StatelessWidget {
                 fontSize: fontSize,
                 fontWeight: FontWeight.w900,
                 color: state.brightness == Brightness.light
-                    ? Colors.black.withOpacity(0.53) // 25.9/night
+                    ? Colors.black.withOpacity(0.53)
                     : AppColors.white38,
               ),
             ),
