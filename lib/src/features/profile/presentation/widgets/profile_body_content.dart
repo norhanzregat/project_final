@@ -61,189 +61,189 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
           builder: (context, themeState) {
             return BlocBuilder<RoomeCubit, RoomeState>(
                 builder: (context, state) {
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          AnimatedBuilder(
+                            animation: _leftAnimationController,
+                            builder: (context, _) => SlideTransition(
+                              position: _leftSlideAnimation,
+                              child: ProfileIconButton(
+                                icon: AppAssets.iconBackIos,
+                                onTap: () {
+                                  BlocProvider.of<RoomeCubit>(context)
+                                      .changeBottomNavToHome(context);
+                                  BlocProvider.of<RoomeCubit>(context)
+                                      .getUserData();
+                                },
+                              ),
+                            ),
+                          ),
+                          AnimatedBuilder(
+                            animation: _rightSlideAnimation,
+                            builder: (context, _) => SlideTransition(
+                              position: _rightSlideAnimation,
+                              child: ProfileIconButton(
+                                icon: themeState.brightness == Brightness.light
+                                    ? AppAssets.iconMoonIcon : AppAssets.iconSunIcon,
+                                isNotBackIcon: true,
+                                onTap: () {
+                                  BlocProvider.of<ThemesCubit>(context)
+                                      .toggleTheme();
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: SizeConfig.screenHeight! * 0.019),
                       AnimatedBuilder(
                         animation: _leftAnimationController,
                         builder: (context, _) => SlideTransition(
                           position: _leftSlideAnimation,
-                          child: ProfileIconButton(
-                            icon: AppAssets.iconBackIos,
-                            onTap: () {
-                              BlocProvider.of<RoomeCubit>(context)
-                                  .changeBottomNavToHome(context);
-                              BlocProvider.of<RoomeCubit>(context)
-                                  .getUserData();
-                            },
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'Profile',
+                              style:
+                              AppTextStyles.onBoardingHeadingTextStyle.copyWith(
+                                fontSize: 30.sp,
+                              ),
+                            ),
                           ),
                         ),
                       ),
+                      SizedBox(height: SizeConfig.screenHeight! * 0.019),
+                      AnimatedBuilder(
+                        animation: _leftSlideAnimation,
+                        builder: (context, _) => SlideTransition(
+                          position: _leftSlideAnimation,
+                          child: Center(
+                            child: CachedNetworkImage(
+                              imageUrl: Helper.currentUser!.profileImage!,
+                              imageBuilder: (_, image) {
+                                return CircleAvatar(
+                                  radius: 70.r,
+                                  backgroundColor:
+                                  Colors.brown.withOpacity(0.80),
+                                  child: CircleAvatar(
+                                    backgroundImage: image,
+                                    radius: 65.r,
+                                    backgroundColor: AppColors.primaryColor,
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: SizeConfig.screenHeight! * 0.029),
+                      ProfileSectionTitle(
+
+                        animation: _rightSlideAnimation,
+                        title: 'Personal Info',
+                        themeState: themeState,
+                      ),
+                      SizedBox(height: SizeConfig.screenHeight! * 0.01),
                       AnimatedBuilder(
                         animation: _rightSlideAnimation,
                         builder: (context, _) => SlideTransition(
                           position: _rightSlideAnimation,
-                          child: ProfileIconButton(
-                            icon: themeState.brightness == Brightness.light
-                                ? AppAssets.iconMoonIcon : AppAssets.iconSunIcon,
-                            isNotBackIcon: true,
-                            onTap: () {
-                              BlocProvider.of<ThemesCubit>(context)
-                                  .toggleTheme();
-                            },
+                          child: InfoContainer(
+                            height: 170,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                UserInfo(
+                                  title: 'Your name',
+                                  info:
+                                  '${Helper.currentUser!.firstName} ${Helper.currentUser!.lastName}',
+                                ),
+                                UserInfo(
+                                  title: 'username',
+                                  info: '${Helper.currentUser!.username}',
+                                ),
+                                UserInfo(
+                                  title: 'Occupation',
+                                  info: Helper.currentUser!.occupation,
+                                ),
+                                UserInfo(
+                                  title: 'Nationality',
+                                  info: Helper.currentUser!.nationality,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: SizeConfig.screenHeight! * 0.025),
+                      ProfileSectionTitle(
+                        animation: _rightSlideAnimation,
+                        title: 'Contact Info',
+                        themeState: themeState,
+                      ),
+                      SizedBox(height: SizeConfig.screenHeight! * 0.01),
+                      AnimatedBuilder(
+                        animation: _rightSlideAnimation,
+                        builder: (context, _) => SlideTransition(
+                          position: _rightSlideAnimation,
+                          child: InfoContainer(
+                            height: 85,
+
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                UserInfo(
+                                  title: 'Phone number :',
+                                  info: Helper.currentUser!.phoneNumber,
+                                ),
+                                UserInfo(
+                                  title: 'Email :',
+                                  info: Helper.currentUser!.email,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: SizeConfig.screenHeight! * 0.025),
+                      AnimatedBuilder(
+                        animation: _leftSlideAnimation,
+                        builder: (context, _) => SlideTransition(
+                          position: _leftSlideAnimation,
+                          child: Center(
+                            child: ActionSlider.standard(
+                              backgroundColor: AppColors.primaryColor,
+                              toggleColor: themeState.brightness == Brightness.light
+                                  ? Colors.white
+                                  : Colors.black,
+                              backgroundBorderRadius:
+                              BorderRadius.all(Radius.circular(100.r)),
+                              height: 45.h,
+                              width: SizeConfig.screenWidth! * 0.6,
+                              slideAnimationCurve: Curves.fastLinearToSlowEaseIn,
+                              action: (controller) async {
+                                await _sliderButtonAction(controller, context);
+                              },
+                              rolling: true,
+                              child: Text(
+                                'Edit',
+                                style: AppTextStyles.onBoardingHeadingTextStyle
+                                    .copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ],
-                  ),
-                  SizedBox(height: SizeConfig.screenHeight! * 0.019),
-                  AnimatedBuilder(
-                    animation: _leftAnimationController,
-                    builder: (context, _) => SlideTransition(
-                      position: _leftSlideAnimation,
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Profile',
-                          style:
-                              AppTextStyles.onBoardingHeadingTextStyle.copyWith(
-                            fontSize: 30.sp,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: SizeConfig.screenHeight! * 0.019),
-                  AnimatedBuilder(
-                    animation: _leftSlideAnimation,
-                    builder: (context, _) => SlideTransition(
-                      position: _leftSlideAnimation,
-                      child: Center(
-                        child: CachedNetworkImage(
-                          imageUrl: Helper.currentUser!.profileImage ?? 'http://mnsh.tech/wp-content/uploads/2023/12/no-facial-features-no-avatar-no-eyes-expressionless-avatar-icon-delayering-avatar-user-avatar-men-head-portrait.png',
-                          imageBuilder: (_, image) {
-                            return CircleAvatar(
-                              radius: 70.r,
-                              backgroundColor:
-                                  Colors.brown.withOpacity(0.80),
-                              child: CircleAvatar(
-                                backgroundImage: image,
-                                radius: 65.r,
-                                backgroundColor: AppColors.primaryColor,
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: SizeConfig.screenHeight! * 0.029),
-                  ProfileSectionTitle(
-
-                    animation: _rightSlideAnimation,
-                    title: 'Personal Info',
-                    themeState: themeState,
-                  ),
-                  SizedBox(height: SizeConfig.screenHeight! * 0.01),
-                  AnimatedBuilder(
-                    animation: _rightSlideAnimation,
-                    builder: (context, _) => SlideTransition(
-                      position: _rightSlideAnimation,
-                      child: InfoContainer(
-                        height: 170,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            UserInfo(
-                              title: 'Your name',
-                              info:
-                                  '${Helper.currentUser!.firstName} ${Helper.currentUser!.lastName}',
-                            ),
-                            UserInfo(
-                              title: 'username',
-                              info: '${Helper.currentUser!.username}',
-                            ),
-                            UserInfo(
-                              title: 'Occupation',
-                              info: Helper.currentUser!.occupation,
-                            ),
-                            UserInfo(
-                              title: 'Nationality',
-                              info: Helper.currentUser!.nationality,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: SizeConfig.screenHeight! * 0.025),
-                  ProfileSectionTitle(
-                    animation: _rightSlideAnimation,
-                    title: 'Contact Info',
-                    themeState: themeState,
-                  ),
-                  SizedBox(height: SizeConfig.screenHeight! * 0.01),
-                  AnimatedBuilder(
-                    animation: _rightSlideAnimation,
-                    builder: (context, _) => SlideTransition(
-                      position: _rightSlideAnimation,
-                      child: InfoContainer(
-                        height: 85,
-
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            UserInfo(
-                              title: 'Phone number :',
-                              info: Helper.currentUser!.phoneNumber,
-                            ),
-                            UserInfo(
-                              title: 'Email :',
-                              info: Helper.currentUser!.email ?? '',
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: SizeConfig.screenHeight! * 0.025),
-                  AnimatedBuilder(
-                    animation: _leftSlideAnimation,
-                    builder: (context, _) => SlideTransition(
-                      position: _leftSlideAnimation,
-                      child: Center(
-                        child: ActionSlider.standard(
-                          backgroundColor: AppColors.primaryColor,
-                          toggleColor: themeState.brightness == Brightness.light
-                              ? Colors.white
-                              : Colors.black,
-                          backgroundBorderRadius:
-                              BorderRadius.all(Radius.circular(100.r)),
-                          height: 45.h,
-                          width: SizeConfig.screenWidth! * 0.6,
-                          slideAnimationCurve: Curves.fastLinearToSlowEaseIn,
-                          action: (controller) async {
-                            await _sliderButtonAction(controller, context);
-                          },
-                          rolling: true,
-                          child: Text(
-                            'Edit',
-                            style: AppTextStyles.onBoardingHeadingTextStyle
-                                .copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              );
-            });
+                  );
+                });
           },
         ),
       ),
@@ -251,9 +251,9 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
   }
 
   Future<void> _sliderButtonAction(
-    ActionSliderController controller,
-    BuildContext context,
-  ) async {
+      ActionSliderController controller,
+      BuildContext context,
+      ) async {
     controller.loading();
 
     await Future.delayed(const Duration(milliseconds: 1500), () {

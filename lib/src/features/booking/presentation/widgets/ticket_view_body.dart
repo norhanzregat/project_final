@@ -40,22 +40,22 @@ class TicketViewBody extends StatelessWidget {
               SizedBox(height: SizeConfig.screenHeight! * 0.035),
               BookingInfoContainer(bookingInfo: bookingInfo),
               SizedBox(height: SizeConfig.screenHeight! * 0.04),
-              CustomActionButton(
-                buttonText: 'Download Ticket',
-                onPressed: () {},
-                textStyle: AppTextStyles.textStyle15.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                ),
-                backgroundColor: AppColors.grey,
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    offset: Offset(0, 4.w),
-                    blurRadius: 4.w,
-                    color: AppColors.primaryColor,
-                  ),
-                ],
-              ),
+              // CustomActionButton(
+              //   buttonText: 'Download Ticket',
+              //   onPressed: () {},
+              //   textStyle: AppTextStyles.textStyle15.copyWith(
+              //     color: Colors.white,
+              //     fontWeight: FontWeight.w600,
+              //   ),
+              //   backgroundColor: AppColors.grey,
+              //   boxShadow: <BoxShadow>[
+              //     BoxShadow(
+              //       offset: Offset(0, 4.w),
+              //       blurRadius: 4.w,
+              //       color: AppColors.primaryColor,
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

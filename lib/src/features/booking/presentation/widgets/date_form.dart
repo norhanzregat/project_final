@@ -133,8 +133,8 @@ class DateForm extends StatelessWidget {
                   : () => cubit.decreaseGuestNumber(),
               increaseOnTap: () => cubit.increaseGuestNumber(),
             ),
-            SizedBox(height: SizeConfig.screenHeight! * 0.056),
-            Row(
+            SizedBox(height: SizeConfig.screenHeight! * 0.030),
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
