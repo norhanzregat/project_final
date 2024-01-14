@@ -83,7 +83,7 @@ class RoomeDataSourceImpl implements RoomeDataSource {
     required UpdateUserParams user,
   }) async {
     final response = await apiConsumer.put(
-      '${EndPoints.user}/$userId',
+      '${EndPoints.updateUser}/$userId',
       queryParameters: {
         'id': userId,
       },
@@ -92,7 +92,6 @@ class RoomeDataSourceImpl implements RoomeDataSource {
         "lastName": user.lastName,
         "username": user.username,
         "email": user.email,
-        "password": user.password,
         "role_id": 1,
         "profileImage": user.profileImage,
         "nationality": user.nationality,

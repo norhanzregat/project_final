@@ -33,7 +33,6 @@ class _EditProfileFormState extends State<EditProfileForm> {
   final TextEditingController _nationalityController = TextEditingController();
   final TextEditingController _phoneNumberController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
 
   bool _isPersonalValidateError = false;
   bool _isContactValidateError = false;
@@ -108,39 +107,6 @@ class _EditProfileFormState extends State<EditProfileForm> {
                             return "Can't be empty";
                           }
                           return null;
-                        },
-                      ),
-                      BlocBuilder<RoomeCubit, RoomeState>(
-                        builder: (context, state) {
-                          RoomeCubit cubit = RoomeCubit.getObject(context);
-                          return EditProfileTextField(
-                            title: 'Password',
-                            controller: _passwordController,
-                            hint: 'Your password',
-                            textCapitalization: TextCapitalization.none,
-                            keyboardType: TextInputType.visiblePassword,
-                            obscure: cubit.passVisible,
-                            validating: (String? val) {
-                              if (val!.isEmpty) {
-                                setState(() {
-                                  _isPersonalValidateError = true;
-                                });
-                                return "Can't be empty";
-                              } else if (val.length < 8) {
-                                setState(() {
-                                  _isPersonalValidateError = true;
-                                });
-                                return 'Week password';
-                              }
-                              return null;
-                            },
-                            suffixIcon: VisibilityIconButton(
-                              icon: cubit.passVisible
-                                  ? Icons.visibility_rounded
-                                  : Icons.visibility_off_rounded,
-                              onPressed: () => cubit.switchPassVisibility(),
-                            ),
-                          );
                         },
                       ),
                       EditProfileTextField(
@@ -301,7 +267,6 @@ class _EditProfileFormState extends State<EditProfileForm> {
       nationality: _nationalityController.text.trim(),
       phoneNumber: _phoneNumberController.text,
       email: _emailController.text.trim(),
-      password: _passwordController.text,
     );
   }
 
@@ -314,7 +279,6 @@ class _EditProfileFormState extends State<EditProfileForm> {
       nationality: _nationalityController.text.trim(),
       phoneNumber: _phoneNumberController.text,
       email: _emailController.text.trim(),
-      password: _passwordController.text,
     );
   }
 
@@ -368,7 +332,6 @@ class _EditProfileFormState extends State<EditProfileForm> {
     _nationalityController.text = Helper.currentUser!.nationality!;
     _phoneNumberController.text = Helper.currentUser!.phoneNumber!;
     _emailController.text = Helper.currentUser!.email!;
-    _passwordController.text = Helper.currentUser!.password!;
   }
 
   void _disposeControllers() {
@@ -378,6 +341,5 @@ class _EditProfileFormState extends State<EditProfileForm> {
     _nationalityController.dispose();
     _phoneNumberController.dispose();
     _emailController.dispose();
-    _passwordController.dispose();
   }
 }
