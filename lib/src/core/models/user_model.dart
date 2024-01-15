@@ -17,6 +17,7 @@ class UserModel extends Equatable {
   final String? phoneNumber;
   final String? occupation;
   final String? nationality;
+  final String? location ;
   final List<Reservation>? reservations;
   final List<Hotel>? favorites;
 
@@ -35,6 +36,7 @@ class UserModel extends Equatable {
     this.phoneNumber,
     this.occupation,
     this.nationality,
+    this.location,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
@@ -79,6 +81,7 @@ class UserModel extends Equatable {
             List<dynamic>.from(reservations!.map((x) => x.toJson())),
         "favorites": List<dynamic>.from(favorites!.map((x) => x.toJson())),
         "nationality": nationality,
+    "location": location,
         "occupation": occupation,
         "phoneNumber": phoneNumber,
       };

@@ -31,6 +31,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _occupationController = TextEditingController();
   final TextEditingController _nationalityController = TextEditingController();
+  final TextEditingController _locationController = TextEditingController();
   final TextEditingController _phoneNumberController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
 
@@ -130,6 +131,22 @@ class _EditProfileFormState extends State<EditProfileForm> {
                         controller: _nationalityController,
                         hint: 'Your nationality',
                         textCapitalization: TextCapitalization.words,
+                        keyboardType: TextInputType.text,
+                        validating: (String? val) {
+                          if (val!.isEmpty) {
+                            setState(() {
+                              _isPersonalValidateError = true;
+                            });
+                            return "Can't be empty";
+                          }
+                          return null;
+                        },
+                      ),
+                      EditProfileTextField(
+                        title: 'Location',
+                        controller: _locationController,
+                        hint: 'Your location',
+                        textCapitalization: TextCapitalization.sentences,
                         keyboardType: TextInputType.text,
                         validating: (String? val) {
                           if (val!.isEmpty) {

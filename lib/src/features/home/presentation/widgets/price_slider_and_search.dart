@@ -17,8 +17,8 @@ class PriceSliderAndSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100.h,
-      width: 300.w,
-      padding: EdgeInsets.only(top: 11.h, left: 13.w),
+      width: 280.w,
+      padding: EdgeInsets.only(top: 11.h, left: 25.w),
       margin: EdgeInsets.only(right: 26.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20.r)),
@@ -47,28 +47,28 @@ class PriceSliderAndSearch extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     DisabledSearchField(state: state),
-                    Container(
-                      height: 38.w,
-                      width: 38.w,
-                      decoration: BoxDecoration(
-                        color: state.brightness == Brightness.light
-                            ? Colors.white
-                            : AppColors.darkGreyColor,
-                        border: Border.all(
-                          color: AppColors.grey.withOpacity(0.42),
-                        ),
-                      ),
-                      child: Center(
-                        child: GestureDetector(
-                          onTap: () {}, // TODO: Filtering Logic
-                          child: Icon(
-                            Icons.filter_list,
-                            size: 22.w,
-                            color: AppColors.primaryColor,
-                          ),
-                        ),
-                      ),
-                    ),
+                    // Container(
+                    //   height: 38.w,
+                    //   width: 38.w,
+                    //   decoration: BoxDecoration(
+                    //     color: state.brightness == Brightness.light
+                    //         ? Colors.white
+                    //         : AppColors.darkGreyColor,
+                    //     border: Border.all(
+                    //       color: AppColors.grey.withOpacity(0.42),
+                    //     ),
+                    //   ),
+                    //   // child: Center(
+                    //   //   child: GestureDetector(
+                    //   //     onTap: () {}, // TODO: Filtering Logic
+                    //   //     // child: Icon(
+                    //   //     //   Icons.filter_list,
+                    //   //     //   size: 22.w,
+                    //   //     //   color: AppColors.primaryColor,
+                    //   //     // ),
+                    //   //   ),
+                    //   // ),
+                    // ),
                   ],
                 ),
               );
