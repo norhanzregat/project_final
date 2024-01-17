@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:reusable_components/reusable_components.dart';
+import 'package:roome/src/features/auth/Log_in/presentation/cubit/login_cubit.dart';
 
 import '../../../../../core/helpers/helper.dart';
 import '../../../../../core/widgets/forgot_password_text_button.dart';
@@ -8,7 +9,7 @@ import '/src/core/utils/app_colors.dart';
 import '/src/core/utils/app_text_styles.dart';
 import '/src/core/widgets/reusable_pass_text_form_field.dart';
 import '/src/core/widgets/reusable_text_form_field.dart';
-import '/src/features/auth/sign_in/presentation/cubit/login_cubit.dart';
+
 import 'remember_me_checkbox.dart';
 
 class LoginForm extends StatefulWidget {
@@ -96,8 +97,10 @@ class _LoginFormState extends State<LoginForm> {
               ),
               const Spacer(),
               ForgotPasswordTextButton(
-                onTap: () {},
+              emailController: _nameOrEmailController, // Pass the email controller
+
               ),
+
             ],
           ),
           SizedBox(height: SizeConfig.screenHeight! * 0.04),

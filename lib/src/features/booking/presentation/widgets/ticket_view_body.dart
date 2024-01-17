@@ -2,18 +2,15 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:reusable_components/reusable_components.dart';
-
-import '../../../../core/utils/app_colors.dart';
 import '/src/core/utils/app_constants.dart';
 import '/src/core/utils/app_navigator.dart';
-import '/src/core/utils/app_text_styles.dart';
-import '/src/core/widgets/custom_action_button.dart';
 import '/src/core/widgets/custom_app_bar.dart';
 import '/src/features/booking/data/models/booking_info.dart';
 import 'booking_info_container.dart';
 
 class TicketViewBody extends StatelessWidget {
   final BookingInfo bookingInfo;
+
   const TicketViewBody({super.key, required this.bookingInfo});
 
   @override
@@ -56,6 +53,17 @@ class TicketViewBody extends StatelessWidget {
               //     ),
               //   ],
               // ),
+              // CustomActionButton(
+              //     buttonText: "Hello",
+              //     onPressed: () {
+              //       print("Heelo");
+              //     },
+              //     textStyle: AppTextStyles.onBoardingHeadingTextStyle.copyWith(
+              //       color: AppColors.primaryColor,
+              //       fontSize: 30,
+              //       fontWeight: FontWeight.bold,
+              //     ),
+              //     backgroundColor: Colors.black)
             ],
           ),
         ),

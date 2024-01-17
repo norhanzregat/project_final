@@ -145,7 +145,7 @@ class BookingInfoContainer extends StatelessWidget {
   String _generateRandomString() {
     var rng = Random();
     const chars =
-        'abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ0123456789';
+        'abcdefghijklmnopqrstuvwxyzABCDEFGHIKL@#%&MNOPQRSTUVWXYZ012()3456789';
     return String.fromCharCodes(Iterable.generate(
         9, (_) => chars.codeUnitAt(rng.nextInt(chars.length))));
   }

@@ -23,13 +23,17 @@ dependencies:
   equatable: ^2.0.5
   file_picker: ^6.0.0
   firebase_auth: ^4.7.1
-  firebase_core: ^2.15.0
+  http:
+  email_auth:
+  firebase_core:
   firebase_storage: ^11.3.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
   flutter_launcher_icons: ^0.13.1
+  fluttertoast:
   flutter_osm_plugin:
+  mailer:
   flutter_screenutil: ^5.9.0
   flutter_staggered_animations: ^1.1.1
   flutter_svg: ^2.0.7
