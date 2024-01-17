@@ -36,13 +36,13 @@ class SignUpViewBody extends StatelessWidget {
             SignUpForm(cubit: cubit, state: state),
             const OrText(),
             SizedBox(height: SizeConfig.screenHeight! * 0.016),
-            LoginWithSocialButtons(
-              googleOnTap: () => cubit.signUpWithGoogle(),
-              appleOnTap: () {
-                // TODO: Sign up with Apple
-              },
-            ),
-            SizedBox(height: SizeConfig.screenHeight! * 0.075),
+            // LoginWithSocialButtons(
+            //   googleOnTap: () => cubit.signUpWithGoogle(),
+            //   appleOnTap: () {
+            //     // TODO: Sign up with Apple
+            //   },
+            // ),
+
             HaveAccountOrNot(
               onTap: () => context.getBack(),
               buttonText: 'Log in',

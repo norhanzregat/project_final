@@ -34,7 +34,7 @@ class DateForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<BookingOneCubit, BookingOneState>(
       builder: (context, state) {
-        final List<String> roomTypes = <String>['Double', 'Single'];
+        final List<String> roomTypes = <String>['Double', 'Single' ];
 
         BookingOneCubit cubit = BlocProvider.of<BookingOneCubit>(context);
 
@@ -143,6 +143,7 @@ class DateForm extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 15,),
                 GlowingCustomButton(
                   onPressed: () => _continueToBookingTwo(
                     context: context,

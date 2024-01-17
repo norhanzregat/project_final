@@ -4,12 +4,12 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:roome/src/features/booking/presentation/cubits/payment/payment_cubit.dart';
 
-import '../../features/auth/sign_in/data/datasources/login_datasource.dart';
-import '../../features/auth/sign_in/data/datasources/login_datasource_impl.dart';
-import '../../features/auth/sign_in/data/repositories/login_repo_impl.dart';
-import '../../features/auth/sign_in/domain/repositories/login_repo.dart';
-import '../../features/auth/sign_in/domain/usecases/login_usecase.dart';
-import '../../features/auth/sign_in/domain/usecases/login_with_google_usecase.dart';
+import '../../features/auth/Log_in/data/datasources/login_datasource.dart';
+import '../../features/auth/Log_in/data/datasources/login_datasource_impl.dart';
+import '../../features/auth/Log_in/data/repositories/login_repo_impl.dart';
+import '../../features/auth/Log_in/domain/repositories/login_repo.dart';
+import '../../features/auth/Log_in/domain/usecases/login_usecase.dart';
+import '../../features/auth/Log_in/domain/usecases/login_with_google_usecase.dart';
 import '../../features/auth/sign_up/data/datasources/sign_up_datasource.dart';
 import '../../features/auth/sign_up/data/datasources/sign_up_datasource_impl.dart';
 import '../../features/auth/sign_up/data/repositories/sign_up_repo_impl.dart';
@@ -43,7 +43,7 @@ import '../network/network_info.dart';
 import '../network/network_info_impl.dart';
 import '/src/config/themes/cubit/themes_cubit.dart';
 import '/src/core/api/api_consumer.dart';
-import '/src/features/auth/sign_in/presentation/cubit/login_cubit.dart';
+import '/src/features/auth/Log_in/presentation/cubit/login_cubit.dart';
 import '/src/features/auth/sign_up/domain/usecases/sign_up_with_google_usecase.dart';
 
 import '/src/features/favorite/data/repositories/favorite_repo_impl.dart';

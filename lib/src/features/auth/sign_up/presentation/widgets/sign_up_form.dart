@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:reusable_components/reusable_components.dart';
 
+
 import '../../../../../core/helpers/helper.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
@@ -131,9 +132,10 @@ class _SignUpFormState extends State<SignUpForm> {
           SizedBox(height: SizeConfig.screenHeight! * 0.01),
           Align(
             alignment: AlignmentDirectional.centerEnd,
-            child: ForgotPasswordTextButton(
-              onTap: () {},
-            ),
+            // child: ForgotPasswordTextButton(
+            //   emailController: _passwordController, // Pass the email controller
+            //
+            // ),
           ),
           SizedBox(height: SizeConfig.screenHeight! * 0.03),
           Padding(
