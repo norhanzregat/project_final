@@ -32,6 +32,11 @@ class BookingOneCubit extends Cubit<BookingOneState> {
 
   String selectedRoomType = 'Double';
 
+/*  double computePrice(double price,Date) {
+    return price * roomNumber * guestNumber *  (checkOutDateTime.difference(c).inDays);
+  }*/
+
+
   void changeSelectedRoomType(String? newVal) {
     selectedRoomType = newVal!;
 
