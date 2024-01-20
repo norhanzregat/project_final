@@ -24,11 +24,15 @@ class DateForm extends StatelessWidget {
     required this.checkInDate,
     required this.checkOutDate,
     required this.bookedHotelInfo,
+    required this.checkInDateTime,
+    required this.checkOutDateTime,
   });
 
   final BookedHotelInfo bookedHotelInfo;
   final String checkInDate;
   final String checkOutDate;
+  final DateTime checkInDateTime;
+  final DateTime checkOutDateTime;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +43,7 @@ class DateForm extends StatelessWidget {
         BookingOneCubit cubit = BlocProvider.of<BookingOneCubit>(context);
 
         double computePrice(double price) {
-          return price * cubit.roomNumber * cubit.guestNumber;
+          return price * cubit.roomNumber * cubit.guestNumber *  (checkOutDateTime.difference(checkInDateTime).inDays);
         }
 
         return Column(
@@ -137,8 +141,15 @@ class DateForm extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
+
+                /// Hint
+                /*
+                you can format Total text
+
+                 */
+
                 Text(
-                  'Total: ${computePrice(bookedHotelInfo.price!)}/night',
+                  'Total: ${(computePrice(bookedHotelInfo.price!)).toStringAsFixed(2)}/night',
                   style: AppTextStyles.textStyle14Medium.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
