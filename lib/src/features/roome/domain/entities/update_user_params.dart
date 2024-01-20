@@ -8,6 +8,8 @@ class UpdateUserParams extends Equatable {
   final String? password;
   final String? occupation;
   final String? nationality;
+  final String? location;
+
   final String? profileImage;
   final String? phoneNumber;
   final String? email;
@@ -19,6 +21,7 @@ class UpdateUserParams extends Equatable {
     this.username,
     this.occupation,
     this.nationality,
+    this.location,
     this.profileImage,
     this.phoneNumber,
     this.email,
@@ -33,6 +36,7 @@ class UpdateUserParams extends Equatable {
         username,
         occupation,
         nationality,
+        location,
         phoneNumber,
         email,
         profileImage,

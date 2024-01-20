@@ -62,7 +62,7 @@ class ProfileImageEditBottomSheet extends StatelessWidget {
               bottom: 20.w,
             ),
             children: <Widget>[
-              SizedBox(height: SizeConfig.screenHeight! * 0.008),
+              SizedBox(height: SizeConfig.screenHeight! * 0.002),
               Text(
                 "Pick a profile picture",
                 style: state.brightness == Brightness.light

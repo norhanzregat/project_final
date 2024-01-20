@@ -110,6 +110,7 @@ class RoomeCubit extends Cubit<RoomeState> {
     String? profileImage,
     String? occupation,
     String? nationality,
+    String? location,
     String? password,
   }) {
     emit(UpdateUserLoadingState());
@@ -125,6 +126,7 @@ class RoomeCubit extends Cubit<RoomeState> {
       profileImage: profileImage ?? Helper.currentUser!.profileImage,
       occupation: occupation,
       nationality: nationality,
+      location : location ,
     )).then((value) {
       value.fold(
         (failure) =>
@@ -163,6 +165,7 @@ class RoomeCubit extends Cubit<RoomeState> {
     String? email,
     String? occupation,
     String? nationality,
+    String? location ,
     String? password,
   }) {
     emit(UploadingProfileImageLoadingState());
@@ -184,6 +187,7 @@ class RoomeCubit extends Cubit<RoomeState> {
               password: password,
               occupation: occupation,
               nationality: nationality,
+              location: location ,
               profileImage: value,
             );
             emit(UploadProfileImageSuccessState(profileImageUrl: value));
