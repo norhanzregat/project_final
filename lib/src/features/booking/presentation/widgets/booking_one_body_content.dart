@@ -29,8 +29,6 @@ class _BookingOneBodyContentState extends State<BookingOneBodyContent> {
 
   DateTime? startDate;
   DateTime? endDate;
-  DateTime checkInDateTime = DateTime.now();
-  DateTime checkOutDateTime = DateTime.now();
 
   late PickerDateRange selectedRange;
 
@@ -79,19 +77,16 @@ class _BookingOneBodyContentState extends State<BookingOneBodyContent> {
                 setState(() {
                   _checkInDate =
                       DateFormat.MMMd().format(selectedRange.startDate!);
-                  checkInDateTime = selectedRange.startDate!;
+
                   if (selectedRange.endDate == null) {
                     endDate = selectedRange.startDate;
 
                     setState(() {
                       _checkOutDate = DateFormat.MMMd().format(endDate!);
-                      checkOutDateTime = endDate!;
                     });
                   } else {
                     _checkOutDate =
                         DateFormat.MMMd().format(selectedRange.endDate!);
-
-                    checkOutDateTime = selectedRange.endDate!;
                   }
                 });
               },
@@ -105,8 +100,6 @@ class _BookingOneBodyContentState extends State<BookingOneBodyContent> {
             bookedHotelInfo: widget.bookedHotelInfo,
             checkInDate: _checkInDate,
             checkOutDate: _checkOutDate,
-            checkInDateTime: checkInDateTime,
-            checkOutDateTime: checkOutDateTime,
           ),
         ),
       ],

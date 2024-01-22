@@ -260,23 +260,23 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
       ) async {
     controller.loading();
 
-    await Future.delayed(const Duration(milliseconds: 1500), () {
+    await Future.delayed(const Duration(seconds: 1), () {
       controller.success();
     });
 
-    await Future.delayed(const Duration(milliseconds: 200), () {
+    await Future.delayed(const Duration(seconds: 1), () {
       controller.reset();
     });
 
-    await Future.delayed(const Duration(milliseconds: 400), () {
+    await Future.delayed(const Duration(seconds: 1), () {
       _forwardAnimationControllers();
     });
 
-    await Future.delayed(const Duration(milliseconds: 300), () {
+    await Future.delayed(const Duration(seconds: 1), () {
       _navigateToEditProfileView(context);
     });
 
-    await Future.delayed(const Duration(milliseconds: 100), () {
+    await Future.delayed(const Duration(seconds: 1), () {
       _resetAnimationControllers();
     });
   }
@@ -336,6 +336,6 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
     );
   }
 
-  Duration _animationDuration() => const Duration(seconds: 3);
+  Duration _animationDuration() => const Duration(seconds: 1);
   Cubic get _animationCurve => Curves.easeIn;
 }
