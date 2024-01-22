@@ -41,6 +41,7 @@ dependencies:
   geolocator: ^10.1.0
   get_it: ^7.6.4
   google_sign_in: ^6.1.4
+
   image_picker: ^1.0.4
   lottie: ^2.7.0
   internet_connection_checker: ^1.0.0+1
