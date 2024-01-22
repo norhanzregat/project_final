@@ -96,12 +96,17 @@ class _BookingOneBodyContentState extends State<BookingOneBodyContent> {
         SizedBox(height: SizeConfig.screenHeight! * 0.023),
         FadeInUp(
           from: AppConstants.fadeInUpValue,
+
           child: DateForm(
             bookedHotelInfo: widget.bookedHotelInfo,
             checkInDate: _checkInDate,
             checkOutDate: _checkOutDate,
+            checkInDateTime: startDate ?? DateTime.now(),
+            checkOutDateTime: endDate ?? DateTime.now(),
           ),
+
         ),
+
       ],
     );
   }
