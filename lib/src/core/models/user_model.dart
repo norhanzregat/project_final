@@ -17,7 +17,7 @@ class UserModel extends Equatable {
   final String? phoneNumber;
   final String? occupation;
   final String? nationality;
- final String? location ;
+  final String? location;
   final List<Reservation>? reservations;
   final List<Hotel>? favorites;
 

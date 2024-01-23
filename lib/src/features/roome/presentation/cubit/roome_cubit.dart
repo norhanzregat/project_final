@@ -126,7 +126,7 @@ class RoomeCubit extends Cubit<RoomeState> {
       profileImage: profileImage ?? Helper.currentUser!.profileImage,
       occupation: occupation,
       nationality: nationality,
-      location : location ,
+      location: location ,
     )).then((value) {
       value.fold(
         (failure) =>

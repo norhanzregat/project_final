@@ -95,6 +95,7 @@ class RoomeDataSourceImpl implements RoomeDataSource {
         "role_id": 1,
         "profileImage": user.profileImage,
         "nationality": user.nationality,
+        "location": user.location,
         "phoneNumber": user.phoneNumber,
         "occupation": user.occupation,
       },
