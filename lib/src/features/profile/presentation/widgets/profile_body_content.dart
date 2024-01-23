@@ -176,7 +176,7 @@ class _ProfileBodyContentState extends State<ProfileBodyContent>
                                 ),
                                 UserInfo(
                                   title: 'Location',
-                                  info: Helper.currentUser!.nationality,
+                                  info: Helper.currentUser!.location,
                                 ),
                               ],
                             ),

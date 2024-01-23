@@ -17,7 +17,7 @@ class UserModel extends Equatable {
   final String? phoneNumber;
   final String? occupation;
   final String? nationality;
-  final String? location ;
+ final String? location ;
   final List<Reservation>? reservations;
   final List<Hotel>? favorites;
 
@@ -65,6 +65,7 @@ class UserModel extends Equatable {
         phoneNumber: json["phoneNumber"] as String?,
         occupation: json["occupation"] as String?,
         nationality: json["nationality"] as String?,
+    location: json["location"] as String?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -78,11 +79,12 @@ class UserModel extends Equatable {
         "role": role?.toJson(),
         "profileImage": profileImage,
         "reservations":
-            List<dynamic>.from(reservations!.map((x) => x.toJson())),
+        List<dynamic>.from(reservations!.map((x) => x.toJson())),
         "favorites": List<dynamic>.from(favorites!.map((x) => x.toJson())),
-        "nationality": nationality,
-    "location": location,
         "occupation": occupation,
+        "nationality": nationality,
+         "location": location,
+
         "phoneNumber": phoneNumber,
       };
 
@@ -102,5 +104,6 @@ class UserModel extends Equatable {
         occupation,
         phoneNumber,
         nationality,
+        location ,
       ];
 }

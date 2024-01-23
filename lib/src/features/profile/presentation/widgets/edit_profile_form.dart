@@ -282,7 +282,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
       username: _usernameController.text.trim(),
       occupation: _occupationController.text.trim(),
       nationality: _nationalityController.text.trim(),
-      //location : _locationController.text.trim(),
+      location : _locationController.text.trim(),
       phoneNumber: _phoneNumberController.text,
       email: _emailController.text.trim(),
     );
@@ -295,7 +295,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
       username: _usernameController.text.trim(),
       occupation: _occupationController.text.trim(),
       nationality: _nationalityController.text.trim(),
-   //   location : _locationController.text.trim(),
+     location : _locationController.text.trim(),
       phoneNumber: _phoneNumberController.text,
       email: _emailController.text.trim(),
     );
@@ -338,7 +338,8 @@ class _EditProfileFormState extends State<EditProfileForm> {
       CustomSnackBar.show(
         context: context,
         message: state.error,
-        title: 'Warning',
+        title: 'Success',
+        backgroundColor: Colors.green
       );
     }
   }
@@ -349,7 +350,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
     _usernameController.text = Helper.currentUser!.username!;
     _occupationController.text = Helper.currentUser!.occupation!;
     _nationalityController.text = Helper.currentUser!.nationality!;
-   // _locationController.text = Helper.currentUser!.location!;
+   //_locationController.text = Helper.currentUser!.location!;
     _phoneNumberController.text = Helper.currentUser!.phoneNumber!;
     _emailController.text = Helper.currentUser!.email!;
   }
@@ -359,7 +360,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
     _usernameController.dispose();
     _occupationController.dispose();
     _nationalityController.dispose();
-    //_locationController.dispose();
+   // _locationController.dispose();
     _phoneNumberController.dispose();
     _emailController.dispose();
   }
