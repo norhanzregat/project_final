@@ -158,6 +158,7 @@ class _SignUpFormState extends State<SignUpForm> {
               ),
             ),
           ),
+
           SizedBox(height: SizeConfig.screenHeight! * 0.03),
         ],
       ),

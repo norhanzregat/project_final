@@ -55,6 +55,7 @@ class BookingInfoContainer extends StatelessWidget {
                 Text(
                   bookingInfo.hotelName!,
                   style: AppTextStyles.appBarTextStyle.copyWith(
+                    fontSize: 19,
                     color: state.brightness == Brightness.light
                         ? Colors.black
                         : Colors.white,

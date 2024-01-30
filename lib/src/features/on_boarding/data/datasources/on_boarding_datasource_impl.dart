@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:roome/src/core/utils/app_navigator.dart';
-
 import '../../../../config/routes/routes.dart';
 import '../../../../core/helpers/cache_helper.dart';
 import '../../../../core/utils/app_assets.dart';
@@ -17,6 +16,7 @@ class OnBoardingDataSourceImpl implements OnBoardingDataSource {
         heading: 'Plan Your Summer Vacation',
         subHeading: 'A group of hotels in the most beautiful places',
       ),
+
       OnBoardingModel(
         image: AppAssets.imageOnBoarding2,
         heading: 'Luxury Resorts',

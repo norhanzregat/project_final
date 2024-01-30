@@ -109,6 +109,7 @@ class _BookingTwoFormState extends State<BookingTwoForm> {
               return _validateBlankFields(val);
             },
           ),
+
           SizedBox(height: SizeConfig.screenHeight! * 0.021),
           _buildFadeInSectionTitle(title: 'Kindly upload any valid ID'),
           SizedBox(height: SizeConfig.screenHeight! * 0.017),
@@ -187,6 +188,7 @@ class _BookingTwoFormState extends State<BookingTwoForm> {
               backgroundColor: AppColors.primaryColor,
             ),
           ),
+
         ],
       ),
     );

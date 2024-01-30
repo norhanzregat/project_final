@@ -10,7 +10,6 @@ import '../../../../core/utils/app_constants.dart';
 import '../../../../core/utils/app_text_styles.dart';
 import '../../../../core/widgets/custom_snack_bar.dart';
 import '../../../../core/widgets/loading_dialog.dart';
-import '../../../../core/widgets/visibility_icon_button.dart';
 import '../../../roome/presentation/cubit/roome_cubit.dart';
 import '/src/config/themes/cubit/themes_cubit.dart';
 import '/src/core/utils/app_navigator.dart';
@@ -328,7 +327,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
       context.getBack();
       CustomSnackBar.show(
         context: context,
-        message: state.error,
+          message: 'User updated successfully',
         title: 'Success',
         backgroundColor: Colors.green
       );
