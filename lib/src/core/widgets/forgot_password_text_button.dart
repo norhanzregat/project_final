@@ -80,7 +80,7 @@ class ForgotPasswordTextButton extends StatelessWidget {
     } catch (e) {
       print('Error sending email: $e');
       Fluttertoast.showToast(
-        msg: 'Error sending email. Please try again later.',
+        msg: ' Please try again later.',
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM,
       );

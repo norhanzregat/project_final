@@ -103,8 +103,10 @@ class DetailsViewBody extends StatelessWidget {
                               ),
                               buttonText: 'Book Now',
                             ),
+
                           ],
                         ),
+
                       ],
                     ),
                   ),

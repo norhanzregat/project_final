@@ -7,7 +7,18 @@ import '/src/features/home/presentation/widgets/shimmer_price_slider_and_search.
 import '/src/features/home/presentation/widgets/shimmer_tabs.dart';
 
 class ShimmerHomeBody extends StatelessWidget {
-  const ShimmerHomeBody({super.key});
+  const
+
+
+
+
+
+
+
+
+
+
+  ShimmerHomeBody({super.key});
 
   @override
   Widget build(BuildContext context) {

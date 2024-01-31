@@ -39,6 +39,7 @@ class _CustomTabsState extends State<CustomTabs> {
   }
 
   double changeWidthOfLine() {
+
     switch (current) {
       case 0:
         return 50.w;
