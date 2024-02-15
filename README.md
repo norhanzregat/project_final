@@ -1,1 +1,1 @@
-
+Go Hotel application...the first Jordanian application specialized in booking hotels and tourist resorts within the Hashemite Kingdom of Jordan. This application will be a tool for all Jordanian tourism companies to promote the services provided by the Jordanian state to tourists so that they will be grateful for the high level of services provided and to increase the national economy.
